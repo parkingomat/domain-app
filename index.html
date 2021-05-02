@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>domain-app.parkingomat.pl</title>
+
+    <link rel="stylesheet" href="//md.softreck.dev/reset.css">
+    <link rel="stylesheet" href="//md.softreck.dev/reveal.css">
+    <link rel="stylesheet" href="//md.softreck.dev/white.css">
+    <link rel="stylesheet" href="//md.softreck.dev/docs.css">
+
+
+    <script src="//get.jloads.com/jloads.min.js">
+        // Jloads is loading any media and content dynamically
+    </script>
+
+    <script>
+        // load content ASAP with dependencies, that jquery must be first and after that bootstrap
+        jl.file({
+            "//code.jquery.com/jquery-3.5.1.min.js": [
+                "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
+                "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            ]
+        });
+    </script>
+
+
+    <script src="//js.loadfunc.com/load_func.js">
+        // Jloads is loading any media and content dynamically
+    </script>
+    <script>
+
+        load_func([
+            'https://js.letjson.com/let_json.js',
+            'https://js.defjson.com/def_json.js',
+            'https://js.eachfunc.com/each_func.js',
+
+        ], function () {
+
+            $meta = let_json("meta.json");
+
+            $domain_dns_list = []
+
+            // echo def_json($meta->out->file, [ $meta->in->post => $domain_list]);
+            // SAVE to SQL
+
+        });
+
+        // Load core of application
+        jl.target({
+            "head": [
+                "//www.faas.ovh/css/fade-in.css",
+                "//www.faas.ovh/form/form.js",
+                "//www.faas.ovh/form/form.css",
+                "//www.faas.ovh/form/inputs.css",
+            ],
+            "#forms": {
+                "//www.faas.ovh/form/app.html": [
+                    "//www.faas.ovh/form/submit.js",
+                    "//www.faas.ovh/form/edit_list.js",
+                ]
+            },
+            "#messages": [
+                "//www.faas.ovh/js/messages.js"
+            ],
+            "#images": [
+                "//logo.faas.ovh/4/cover.png",
+            ],
+            "#menu": [
+                "//www.faas.ovh/html/menu.html",
+            ],
+            "#usermenu": [
+                "//www.faas.ovh/html/user_menu.html",
+            ],
+            "footer": [
+                "//www.faas.ovh/html/footer.html"
+            ]
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+
+<div class="reveal">
+
+    <div class="slides">
+
+        <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
+        <section data-markdown="README.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
+
+    </div>
+
+</div>
+
+<script src="//md.softreck.dev/dist/reveal.js"></script>
+<script src="//md.softreck.dev/plugin/markdown/markdown.js"></script>
+
+<script>
+
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        plugins: [RevealMarkdown]
+    });
+
+</script>
+
+
+</body>
+</html>
